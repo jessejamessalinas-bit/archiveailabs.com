@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive AI Labs</title>
+<meta name="description" content="Archive AI Labs — next-generation autonomous AI infrastructure for software development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #06080e;
+  --surface: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e8f0;
+  --dim: #64748b;
+  --faint: #334155;
+  --accent: #EAB308;
+  --accent-dim: rgba(234,179,8,0.12);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(234,179,8,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234,179,8,0.012) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--bg);
+}
+
+.logo-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.logo-text span { color: var(--accent); }
+
+nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--dim);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--accent); }
+
+.hero {
+  padding: 140px 0 100px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--accent), #f59e0b, var(--text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--dim);
+  max-width: 480px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.cta-btn:hover { opacity: 0.9; }
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.section-text {
+  color: var(--dim);
+  font-size: 16px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+@media (max-width: 600px) {
+  .focus-grid { grid-template-columns: 1fr; }
+}
+
+.focus-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.focus-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.focus-card p {
+  font-size: 14px;
+  color: var(--dim);
+  line-height: 1.6;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 100px 0 80px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-section h2 {
+  margin-bottom: 12px;
+}
+
+.contact-section p {
+  color: var(--dim);
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+
+footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+footer p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--faint);
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<div class="container">
+  <nav>
+    <div class="logo">
+      <div class="logo-icon">A</div>
+      <div class="logo-text"><span>Archive</span> AI Labs</div>
+    </div>
+    <a href="mailto:jesse@archiveailabs.com">Contact</a>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="hero">
+    <h1>Autonomous AI for Software Development</h1>
+    <p>We're building AI systems that write, evaluate, and improve code continuously — without human intervention.</p>
+    <a href="mailto:jesse@archiveailabs.com" class="cta-btn">Get in Touch</a>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2>What We're Building</h2>
+    <p class="section-text">AI infrastructure that produces production-ready software autonomously. Our systems run around the clock, generating code, evaluating quality, and improving with every iteration.</p>
+
+    <div class="focus-grid">
+      <div class="focus-card">
+        <h3>Autonomous Code Generation</h3>
+        <p>AI agents that produce real, functional software across a wide range of project types and programming languages.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Continuous Improvement</h3>
+        <p>Systems that learn from their own output, getting measurably better over time without manual tuning or retraining.</p>
+      </div>
+      <div class="focus-card">
+        <h3>AI Training Data</h3>
+        <p>Purpose-built pipelines that capture high-quality training data for fine-tuning next-generation code models.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Quality at Scale</h3>
+        <p>Automated evaluation and selection processes that ensure only proven, tested solutions make it to production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container contact-section">
+  <h2>Jesse Salinas, Founder</h2>
+  <p>Porterville, California</p>
+  <a href="mailto:jesse@archiveailabs.com" class="cta-btn">jesse@archiveailabs.com</a>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Archive AI Labs &copy; 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
